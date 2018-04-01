@@ -10,13 +10,27 @@ class UsersController < ApplicationController
   end
 
   def update
-    if params[:user_id] != session[:user_id]
+    if params[:id].to_i != session[:user_id]
       flash[:error] = 'You are not authorized to change that users password.'
       return redirect_to account_path
     end
 
-    user = User.find(params[:user_id])
+    user = User.find(params[:id])
 
+    if !User.authenticate(user.email, user_params[:current_password])
+      flash[:error] = 'You must enter your current password first.'
+    elsif user_params[:password] != user_params[:password_confirmation]
+      flash[:error] = 'Passwords must match.'
+    else
+      user.update_password(user_params[:password])
+      if user.save
+        flash[:info] = 'Your password has been updated!'
+      else
+        flash[:error] = 'An error occured.'
+      end
+    end
+
+    redirect_to account_path
   end
 
   def create
@@ -40,7 +54,8 @@ class UsersController < ApplicationController
       :email,
       :email_confirmation,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :current_password
     )
   end
 end
