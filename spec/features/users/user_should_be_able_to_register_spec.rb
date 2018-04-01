@@ -29,5 +29,7 @@ describe 'User visiting /register' do
     click_on 'Create Account'
 
     expect(page).to have_content("You have successfully registered, #{user[:name]}!")
+
+
   end
 end
