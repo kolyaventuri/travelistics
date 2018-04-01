@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+
   end
 
   def new
@@ -10,12 +10,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user)
+      redirect_to account_path
     else
       unless @user.errors.details[:email].nil?
         flash[:error] = 'The provided email is already in use.'
       end
-      render :new
+      redirect_to registration_path
     end
   end
 

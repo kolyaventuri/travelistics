@@ -34,7 +34,7 @@ describe 'User visiting /login' do
                 .cookies
 
       expect(cookies.fetch('sid')).to_not be_nil
-      expect(path).to eq(account_path)
+      expect(current_path).to eq(account_path)
     end
   end
 

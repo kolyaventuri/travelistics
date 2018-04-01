@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       sid = generate_sid
       session[:sid] = sid
       cookies[:sid] = sid
-      redirect_to '/register'
+      redirect_to account_path
     end
   end
 
