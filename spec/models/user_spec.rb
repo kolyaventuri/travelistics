@@ -42,6 +42,14 @@ describe User, type: :model do
   end
 
   describe 'methods' do
+    before(:each) do
+      DatabaseCleaner.clean
+    end
+
+    after(:each) do
+      DatabaseCleaner.clean
+    end
+    
     describe 'user#admin?' do
       it 'should return true/false for if a user is an admin' do
         user = User.new(name: 'Bob', email: 'bob@bob.com', password: 'a', salt: 'b', admin: true)

@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
+  include SessionHelper
+
   def show
-    if session[:sid].nil?
-      redirect_to login_path
-    else
-      @user = User.find(session[:user_id])
-    end
+    require_login!
   end
 
   def new
@@ -14,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      open_session(@user.id)
       redirect_to account_path
     else
       unless @user.errors.details[:email].nil?
