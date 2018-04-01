@@ -13,9 +13,12 @@ script:
 - bundle exec rails db:create RAILS_ENV=test
 - bundle exec rails db:migrate RAILS_ENV=test
 - bundle exec rspec
+
+branches:
+  only:
+    - master
+
 deploy:
   provider: heroku
   api_key:
     secure: "O0FCxDGHH1pme9SDWLzG+YNL1m8VLo75vxr+MjILQ2wgK/V25kNFWtT8AqCEefTbK29XNkoBOsjski38yOLc7VdpmtfkYdTE8PClvFr9V05uLR53E5RRFDz7qsrNV5gnmCELVtg7kjn/XAxNK8tAuhWMehIQ81vDDNPr+4Lv8wDvi5ZLocKKqhdYwWPi9N4ovOeuqfaakoY8D2skn9EitVUblsaCWobdwBABtLAP7r2oQNnSiFLDtCKLgMU4TjhAbdEDdUotZt9sK4V9YF/olXlqCBwt3W4wrdwV9bAKHS2o332uQGrCYIu1q3wVoR5eAbJTQf+XzGFO/G24NGVPwdTjqiKtxCxjahlZQ/1XO+HRw0OG/CzAqaKW73LTOtSv6xMC9JL70bIWvrwMKMpcE/Z4nCs3IJg94JCjNHAouY26zemkAhtGWmBY9GxTnvZ3ESXfpJJJdR9qRihJsV2tiO/hceB1p4kwEaC/IGN675y82tQbmsDQVUipILhYMrsYZJRjlVJW7aGnlHFDy2MMPL4YhlsZztUrEeHHmyPR9l+nYnDpeq7zKm/eDcA2lmWjUh6Nth72LIoAY+GJ2yg3NG1OtkWLeXH4z3pJQgv4r9/WDHrNMC8XJ1Lk58Jn1FaIYWBiBZuHJbM4waO8Lz/9DtdWIsVH3HoxutscwMycwnM="
-  on:
-    branch: master
