@@ -23,6 +23,12 @@ class User < ApplicationRecord
     admin
   end
 
+  def update_password(password)
+    self.salt = nil
+    self.password = password
+    generate_salt
+  end
+
   def self.authenticate(email, password)
     user = User.where(email: email).first
     return nil if user.nil?
