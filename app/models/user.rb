@@ -23,6 +23,10 @@ class User < ApplicationRecord
     admin
   end
 
+  def self.authenticate(email, password)
+
+  end
+
   private
 
   def generate_salt

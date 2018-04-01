@@ -51,5 +51,25 @@ describe User, type: :model do
         expect(user2.admin?).to be(false)
       end
     end
+
+    describe 'User#authenticate' do
+      it 'should be able to authenticate a user' do
+        user_info = {
+          name: 'Bob Ross',
+          email: 'bob@bobross.com',
+          password: 'happy_little_trees'
+        }
+
+        user = User.create!(user_info)
+
+        good = User.authenticate(user_info[:email], user_info[:password])
+
+        expect(good).to eq(user)
+
+        bad = User.authenticate(user_info[:email], 'wrong')
+
+        expect(bad).to be_nil
+      end
+    end
   end
 end
