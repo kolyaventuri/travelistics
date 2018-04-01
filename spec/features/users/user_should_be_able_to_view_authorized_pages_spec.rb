@@ -8,8 +8,8 @@ describe 'User visits /account' do
   }
 
   before(:all) do
-    User.create!(user)
     DatabaseCleaner.clean
+    User.create!(user)
   end
 
   after(:each) do
@@ -30,7 +30,7 @@ describe 'User visits /account' do
       visit account_path
 
       expect(current_path).to eq(account_path)
-      expect(page).to have_content("Welcome #{user[:name]}")
+      expect(page).to have_content("Welcome #{user[:name]}!")
     end
   end
 
