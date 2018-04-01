@@ -24,7 +24,12 @@ class User < ApplicationRecord
   end
 
   def self.authenticate(email, password)
+    user = User.where(email: email).first
+    return nil if user.nil?
 
+    crypted_password = BCrypt::Engine.hash_secret(password, user.salt)
+
+    user if crypted_password == user.password
   end
 
   private
