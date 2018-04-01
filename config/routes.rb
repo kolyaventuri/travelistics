@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:create, :show]
   get '/register', to: 'users#new', as: 'registration'
-  get '/login', to: 'users#login', as: 'login'
+  get '/login', to: 'sessions#login', as: 'login'
 
-  post '/login/do', to: 'users#authenticate'
+  post '/login/do', to: 'sessions#authenticate'
 
 end
