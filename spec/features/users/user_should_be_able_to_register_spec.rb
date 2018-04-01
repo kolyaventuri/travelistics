@@ -22,9 +22,9 @@ describe 'User visiting /register' do
 
     fill_in 'user[name]', with: user[:name]
     fill_in 'user[email]', with: user[:email]
-    fill_in 'user[confirm_email]', with: user[:email]
+    fill_in 'user[email_confirmation]', with: user[:email]
     fill_in 'user[password]', with: user[:password]
-    fill_in 'user[confirm_password]', with: user[:password]
+    fill_in 'user[password_confirmation]', with: user[:password]
 
     click_on 'Create Account'
 
