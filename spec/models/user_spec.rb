@@ -99,6 +99,7 @@ describe User, type: :model do
 
         expect(user.password).to_not eq(current_crypted_password)
         expect(user.salt).to_not eq(current_salt)
+        expect(user).to be_valid
       end
     end
   end
