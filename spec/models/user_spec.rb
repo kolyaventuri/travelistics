@@ -49,7 +49,7 @@ describe User, type: :model do
     after(:each) do
       DatabaseCleaner.clean
     end
-    
+
     describe 'user#admin?' do
       it 'should return true/false for if a user is an admin' do
         user = User.new(name: 'Bob', email: 'bob@bob.com', password: 'a', salt: 'b', admin: true)
@@ -77,6 +77,28 @@ describe User, type: :model do
         bad = User.authenticate(user_info[:email], 'wrong')
 
         expect(bad).to be_nil
+      end
+    end
+
+    describe 'user#update_password' do
+      it 'should be able to update a users password and provide a new salt' do
+        user_info = {
+          name: 'Bob Ross',
+          email: 'bob@bobross.com',
+          password: 'happy_little_trees'
+        }
+
+        new_password = 'new_password'
+
+        user = User.new(user_info)
+
+        current_crypted_password = user.password
+        current_salt = user.salt
+
+        user.update_password(new_password)
+
+        expect(user.passsword).to_not eq(current_crypted_password)
+        expect(user.salt).to_not eq(current_salt)
       end
     end
   end

@@ -10,6 +10,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    if params[:user_id] != session[:user_id]
+      flash[:error] = 'You are not authorized to change that users password.'
+      return redirect_to account_path
+    end
+
+    user = User.find(params[:user_id])
+
   end
 
   def create
