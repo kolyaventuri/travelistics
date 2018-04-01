@@ -1,1 +1,13 @@
 h1 Welcome #{@user.name}!
+
+= form_for @user do |f|
+  = f.label :current_password
+  = f.password_field :current_password
+
+  = f.label :password, 'New Password'
+  = f.password_field :password
+
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation
+
+  = f.submit 'Change Password'
