@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new', as: 'registration'
   get '/login', to: 'users#login', as: 'login'
 
+  post '/login/do', to: 'users#authenticate'
+
 end
