@@ -19,7 +19,9 @@ class SessionsController < ApplicationController
   end
 
   def clear
+    reset_session
 
+    redirect_to root_path
   end
 
   private

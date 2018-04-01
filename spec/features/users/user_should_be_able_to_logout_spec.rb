@@ -32,7 +32,8 @@ describe 'Authenticated user visiting /logout' do
                 .request
                 .cookies
 
-      expect(cookies.fetch('sid')).to be_nil
+      expect(current_path).to eq(root_path)
+      expect { cookies.fetch('sid') }.to raise_error(KeyError)
     end
   end
 
