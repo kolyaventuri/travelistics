@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
+      unless @user.errors.details[:email].nil?
+        flash[:reg_error] = 'The provided email is already in use.'
+      end
       render :new
     end
   end
