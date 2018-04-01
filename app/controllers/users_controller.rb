@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       unless @user.errors.details[:email].nil?
-        flash[:reg_error] = 'The provided email is already in use.'
+        flash[:error] = 'The provided email is already in use.'
       end
       render :new
     end
@@ -21,6 +21,17 @@ class UsersController < ApplicationController
 
   def login
     @user = User.new
+  end
+
+  def authenticate
+    params = user_params
+    user = User.authenticate(params[:email], params[:password])
+    if user.nil?
+      flash[:error] = 'Your email or password was incorrect.'
+      redirect_to :login
+    else
+      
+    end
   end
 
   private
