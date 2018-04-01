@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 # User
 class User < ApplicationRecord
   validates_presence_of :name
@@ -15,9 +17,19 @@ class User < ApplicationRecord
 
   def init
     self.admin ||= false
+    generate_salt
   end
 
   def admin?
     admin
+  end
+
+  private
+
+  def generate_salt
+    if salt.nil?
+      self.salt ||= BCrypt::Engine.generate_salt
+      self.password = BCrypt::Engine.hash_secret(password, self.salt)
+    end
   end
 end
