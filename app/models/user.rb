@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
 
+  validates_confirmation_of :email
+  validates_confirmation_of :password
+
   def admin?
     admin
   end

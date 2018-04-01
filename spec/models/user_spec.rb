@@ -9,6 +9,9 @@ describe User, type: :model do
     it { is_expected.to validate_presence_of(:admin) }
 
     it { is_expected.to validate_uniqueness_of(:email) }
+
+    it { is_expected.to validate_confirmation_of(:email) }
+    it { is_expected.to validate_confirmation_of(:password) }
   end
 
   describe 'methods' do
