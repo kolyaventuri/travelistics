@@ -1,0 +1,14 @@
+addons:
+  postgresql: 9.6
+  code_climate:
+      repo_token: 40353e6737489eed237336806e08aff06c6eb3e773659ba31fcd083c6ca9ddc9
+after_success:
+  - bundle exec codeclimate-test-reporter
+dist: trusty
+language: ruby
+rvm:
+  - 2.4.3
+script:
+  - bundle exec rails db:create RAILS_ENV=test
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rspec

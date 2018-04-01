@@ -1,0 +1,64 @@
+# Ruby #
+########
+*.gem
+/.config
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+.rvmrc
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Documentation cache and generated files #
+###########################################
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+# Environment normalization #
+#############################
+/.bundle/
+/lib/bundler/man/
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+db/csv/*.csv
+coverage/
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/node_modules
+/yarn-error.log
+
+.byebug_history
