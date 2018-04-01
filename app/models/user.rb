@@ -5,4 +5,8 @@ class User < ApplicationRecord
   validates_presence_of :password
   validates_presence_of :salt
   validates_presence_of :admin
+
+  def admin?
+    admin
+  end
 end
