@@ -6,6 +6,7 @@ after_success:
 - bundle exec codeclimate-test-reporter
 dist: trusty
 language: ruby
+cache: bundler
 rvm:
 - 2.4.3
 script:
