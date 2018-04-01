@@ -29,6 +29,7 @@ describe 'User visiting /register' do
     click_on 'Create Account'
 
     expect(page).to have_content("You have successfully registered, #{user[:name]}!")
+    expect(current_path).to eq(account_path)
   end
   it 'should disallow duplicate emails' do
     User.create!(user)
@@ -47,5 +48,6 @@ describe 'User visiting /register' do
 
     expect(page).to_not have_content("You have successfully registered, #{user[:name]}!")
     expect(page).to have_content('The provided email is already in use.')
+    expect(current_path).to eq(registration_path)
   end
 end
