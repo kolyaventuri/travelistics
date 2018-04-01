@@ -7,6 +7,8 @@ describe User, type: :model do
     it { is_expected.to validate_presence_of(:password) }
     it { is_expected.to validate_presence_of(:salt) }
     it { is_expected.to validate_presence_of(:admin) }
+
+    it { is_expected.to validate_uniqueness_of(:email) }
   end
 
   describe 'methods' do

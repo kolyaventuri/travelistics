@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates_presence_of :salt
   validates_presence_of :admin
 
+  validates_uniqueness_of :email
+
   def admin?
     admin
   end
