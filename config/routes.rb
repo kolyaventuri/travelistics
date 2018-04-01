@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   post '/login/do', to: 'sessions#authenticate'
 
+  get '/logout', to: 'sessions#clear', as: 'logout'
+
 end

@@ -18,6 +18,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def clear
+
+  end
+
   private
   def generate_sid
     rand(36**64).to_s(36)

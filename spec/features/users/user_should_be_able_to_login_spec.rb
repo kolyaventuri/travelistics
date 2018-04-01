@@ -47,6 +47,14 @@ describe 'User visiting /login' do
       click_on 'Login'
 
       expect(page).to have_content('Your email or password was incorrect.')
+
+      cookies = Capybara
+                .current_session
+                .driver
+                .request
+                .cookies
+
+      expect { cookies.fetch('sid') }.to raise_error(KeyError)
     end
   end
 end
