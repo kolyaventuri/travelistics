@@ -1,3 +1,4 @@
+# Country
 class Country < ApplicationRecord
   validates_presence_of :name
   validates_presence_of :code
