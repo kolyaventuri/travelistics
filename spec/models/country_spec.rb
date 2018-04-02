@@ -8,4 +8,6 @@ describe Country, type: :model do
   it { is_expected.to validate_uniqueness_of(:code) }
 
   it { is_expected.to belong_to(:currency) }
+  it { is_expected.to have_many(:country_languages) }
+  it { is_expected.to have_many(:languages).through(:country_languages) }
 end
