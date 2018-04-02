@@ -27,13 +27,6 @@ describe 'User visiting /login' do
 
       click_on 'Login'
 
-      cookies = Capybara
-                .current_session
-                .driver
-                .request
-                .cookies
-
-      expect(cookies.fetch('sid')).to_not be_nil
       expect(current_path).to eq(account_path)
     end
   end
@@ -49,13 +42,9 @@ describe 'User visiting /login' do
 
       expect(page).to have_content('Your email or password was incorrect.')
 
-      cookies = Capybara
-                .current_session
-                .driver
-                .request
-                .cookies
+      visit account_path
 
-      expect { cookies.fetch('sid') }.to raise_error(KeyError)
+      expect(current_path).to eq(login_path)
     end
   end
 end

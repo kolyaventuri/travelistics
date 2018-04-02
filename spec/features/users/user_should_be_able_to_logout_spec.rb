@@ -26,15 +26,11 @@ describe 'Authenticated user visiting /logout' do
 
       visit logout_path
 
-      cookies = Capybara
-                .current_session
-                .driver
-                .request
-                .cookies
-
       expect(current_path).to eq(root_path)
-      expect { cookies.fetch('sid') }.to raise_error(KeyError)
+
+      visit account_path
+
+      expect(current_path).to eq(login_path)
     end
   end
-
 end
