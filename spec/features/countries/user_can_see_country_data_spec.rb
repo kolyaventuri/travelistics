@@ -10,11 +10,19 @@ describe 'User visiting a country page' do
   end
 
   scenario 'should see that countries information' do
-    country = Country.create!(name: 'United States of America', code: 'US', side_of_road: 'right')
+    currency = Currency.create!(code: 'USD')
+    country = Country.create!(
+      name: 'United States of America',
+      code: 'US',
+      side_of_road: 'right',
+      currency: currency
+    )
 
     visit country_path(country)
 
     expect(page).to have_content(country.name)
     expect(page).to have_content('right side of road')
+
+    expect(page).to have_content("#{country.name} uses the #{currency.code}")
   end
 end
