@@ -1,6 +1,6 @@
 h1 Editing #{@country.name}
 
-= form_for @country do |f|
+= form_for [:admin, @country] do |f|
   = f.label :name
   = f.text_field :name
 
