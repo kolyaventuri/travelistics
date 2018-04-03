@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#clear', as: 'logout'
 
   get '/account', to: 'users#show', as: 'account'
+
+  namespace :admin do
+    root to: 'admin#index'
+  end
 end
