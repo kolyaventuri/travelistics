@@ -47,5 +47,11 @@ describe 'Admin' do
     fill_in 'country[side_of_road]', with: new_data[:side_of_road]
 
     click_on 'Update Country'
+
+    expect(current_path).to eq(admin_country_path(@country))
+    expect(page).to have_content("#{new_data[:name]} was updated")
+    expect(page).to have_content(new_data[:name])
+    expect(page).to have_content(new_data[:code])
+    expect(page).to have_content(new_data[:side_of_road].capitalize)
   end
 end
