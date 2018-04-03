@@ -1,1 +1,13 @@
 h1 Editing #{@country.name}
+
+= form_for @country do |f|
+  = f.label :name
+  = f.text_field :name
+
+  = f.label :code
+  = f.text_field :code
+
+  = f.label :side_of_road
+  = f.text_field :side_of_road
+
+  = f.submit 'Update Country'
