@@ -95,7 +95,7 @@ describe User, type: :model do
         current_crypted_password = user.password
         current_salt = user.salt
 
-        user.update_password(new_password)
+        user.update_password(new_password, new_password)
 
         expect(user.password).to_not eq(current_crypted_password)
         expect(user.salt).to_not eq(current_salt)

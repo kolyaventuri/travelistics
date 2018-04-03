@@ -11,21 +11,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    unless params[:id].to_i == current_user.id
-      flash[:error] = 'You are not authorized to change that users password.'
-      return redirect_to account_path
-    end
-
     if !User.authenticate(current_user.email, user_params[:current_password])
       flash[:error] = 'You must enter your current password first.'
-    elsif user_params[:password] != user_params[:password_confirmation]
-      flash[:error] = 'Passwords must match.'
     else
-      current_user.update_password(user_params[:password])
+      current_user.update_password(user_params[:password], user_params[:password_confirmation])
       if current_user.save
         flash[:info] = 'Your password has been updated!'
+      elsif current_user.errors.details[:password_confirmation].first[:error] == :confirmation
+        flash[:error] = 'Passwords must match.'
       else
-        flash[r:error] = 'An error occured.'
+        flash[:error] = 'An error occured.'
       end
     end
 

@@ -19,9 +19,10 @@ class User < ApplicationRecord
     generate_salt
   end
 
-  def update_password(password)
+  def update_password(password, password_confirmation)
     self.salt = nil
     self.password = password
+    self.password_confirmation = password_confirmation
     generate_salt
   end
 
