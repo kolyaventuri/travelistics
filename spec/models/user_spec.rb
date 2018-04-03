@@ -14,13 +14,13 @@ describe User, type: :model do
     it 'should not be an admin by default' do
       user = User.new(name: 'A', email: 'B', password: 'C', salt: 'D')
       expect(user).to be_valid
-      expect(user.admin).to be(false)
+      expect(user.default?).to be_truthy
     end
 
     it 'should be able to be an admin upon creation' do
-      user = User.new(name: 'A', email: 'B', password: 'C', salt: 'D', admin: true)
+      user = User.new(name: 'A', email: 'B', password: 'C', salt: 'D', role: 1)
       expect(user).to be_valid
-      expect(user.admin).to be(true)
+      expect(user.admin?).to be(true)
     end
 
     it 'should be assigned a password salt upon creation' do
@@ -52,8 +52,8 @@ describe User, type: :model do
 
     describe 'user#admin?' do
       it 'should return true/false for if a user is an admin' do
-        user = User.new(name: 'Bob', email: 'bob@bob.com', password: 'a', salt: 'b', admin: true)
-        user2 = User.new(name: 'Bob', email: 'bob@bob.com', password: 'a', salt: 'b', admin: false)
+        user = User.new(name: 'Bob', email: 'bob@bob.com', password: 'a', salt: 'b', role: 1)
+        user2 = User.new(name: 'Bob', email: 'bob@bob.com', password: 'a', salt: 'b')
 
         expect(user.admin?).to be(true)
         expect(user2.admin?).to be(false)
@@ -95,7 +95,7 @@ describe User, type: :model do
         current_crypted_password = user.password
         current_salt = user.salt
 
-        user.update_password(new_password)
+        user.update_password(new_password, new_password)
 
         expect(user.password).to_not eq(current_crypted_password)
         expect(user.salt).to_not eq(current_salt)

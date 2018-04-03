@@ -2,10 +2,11 @@ require 'bcrypt'
 
 # User
 class User < ApplicationRecord
+  enum role: [:default, :admin]
+
   validates_presence_of :name
   validates_presence_of :email
   validates_presence_of :password
-  validates_inclusion_of :admin, in: [true, false]
 
   validates_uniqueness_of :email
 
@@ -15,17 +16,13 @@ class User < ApplicationRecord
   after_initialize :init
 
   def init
-    self.admin ||= false
     generate_salt
   end
 
-  def admin?
-    admin
-  end
-
-  def update_password(password)
+  def update_password(password, password_confirmation)
     self.salt = nil
     self.password = password
+    self.password_confirmation = password_confirmation
     generate_salt
   end
 
