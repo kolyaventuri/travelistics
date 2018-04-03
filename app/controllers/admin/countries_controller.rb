@@ -5,6 +5,7 @@ module Admin
     before_action :require_admin
 
     def index
+      @countries = Country.all
     end
   end
 end
