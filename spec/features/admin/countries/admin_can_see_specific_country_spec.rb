@@ -30,7 +30,7 @@ describe 'Admin' do
 
     expect(page).to have_content(country.name)
     expect(page).to have_content(country.code)
-    expect(page).to have_content(country.side_of_road)
+    expect(page).to have_content(country.side_of_road.capitalize)
 
     expect(page).to have_content(country.currency.code)
     expect(page).to have_content(country.languages.first.name)
