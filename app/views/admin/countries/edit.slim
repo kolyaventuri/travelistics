@@ -11,3 +11,11 @@ h1 Editing #{@country.name}
   = f.text_field :side_of_road
 
   = f.submit 'Update Country'
+
+
+ul.languages
+  - @country.languages.find_each do |language|
+    li
+      p= language.name
+
+a href="#{new_admin_country_language_path(@country)}" Add Language
