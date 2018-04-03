@@ -8,4 +8,6 @@ ul.languages
   - @country.languages.find_each do |language|
     li= language.name
 
+= link_to 'Edit', edit_admin_country_path(@country)
+
 

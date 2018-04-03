@@ -11,5 +11,9 @@ module Admin
     def show
       @country = Country.find(params[:id])
     end
+
+    def edit
+      @country = Country.find(params[:id])
+    end
   end
 end
