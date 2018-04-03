@@ -3,13 +3,16 @@ require 'rails_helper'
 describe 'Admin' do
   before(:all) do
     DatabaseCleaner.clean
-    @user = User.create!(
+    @user = User.new(
       name: 'Bob Ross',
       email: 'bob@bobross.com',
       password: 'happy_little_trees',
       role: 1
     )
+  end
 
+  before(:each) do
+    DatabaseCleaner.clean
     @currency = Currency.create!(code: 'USD')
     @language = Language.create!(name: 'English', code: 'EN')
     @language2 = Language.create!(name: 'Spanish', code: 'SP')
@@ -17,7 +20,6 @@ describe 'Admin' do
     @country = Country.create!(name: 'United States', code: 'US', side_of_road: 'right', currency: @currency)
 
     @country.languages.push(@language)
-    @country.languages.push(@language2)
   end
 
   after(:all) do
@@ -53,5 +55,37 @@ describe 'Admin' do
     expect(page).to have_content(new_data[:name])
     expect(page).to have_content(new_data[:code])
     expect(page).to have_content(new_data[:side_of_road].capitalize)
+  end
+
+  scenario 'can add language to country' do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
+    visit edit_admin_country_path(@country)
+
+    expect(page).to have_content(@language.name)
+    expect(page).to_not have_content(@language2.name)
+
+    click_on 'Add Language'
+
+    expect(current_path).to eq(new_admin_country_language_path(@country))
+
+    expect(page).to have_content("Add language to #{@country.name}")
+
+    select(@language2.name, from: 'languages')
+
+    click_on 'Add Language'
+
+    expect(current_path).to eq(edit_admin_country_path(@country))
+
+    expect(page).to have_content(@language.name)
+    expect(page).to have_content(@language2.name)
+  end
+
+  scenario 'can delete language from country' do
+    visit edit_admin_country_path(@country)
+
+    within("#language_#{@language.id}") do
+      click_on 'Delete'
+    end
   end
 end
