@@ -9,7 +9,7 @@ describe 'Admin' do
     DatabaseCleaner.clean
   end
 
-  scenario 'can see a list of countries' do
+  scenario 'can see a countries data' do
     user = User.create!(
       name: 'Bob Ross',
       email: 'bob@bobross.com',
@@ -21,10 +21,12 @@ describe 'Admin' do
 
     currency = Currency.create!(code: 'USD')
     language = Language.create!(name: 'English', code: 'EN')
+    language2 = Language.create!(name: 'Spanish', code: 'SP')
 
     country = Country.create!(name: 'United States', code: 'US', side_of_road: 'right', currency: currency)
 
     country.languages << language
+    country.languages << language2
 
     visit admin_country_path(country)
 
@@ -32,7 +34,8 @@ describe 'Admin' do
     expect(page).to have_content(country.code)
     expect(page).to have_content(country.side_of_road.capitalize)
 
-    expect(page).to have_content(country.currency.code)
-    expect(page).to have_content(country.languages.first.name)
+    expect(page).to have_content(currency.code)
+    expect(page).to have_content(language.name)
+    expect(page).to have_content(language2.name)
   end
 end
