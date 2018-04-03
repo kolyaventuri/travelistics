@@ -10,11 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401005903) do
+ActiveRecord::Schema.define(version: 20180402213309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "adminpack"
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.string "code", limit: 2
+    t.string "side_of_road"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "currency_id"
+    t.index ["currency_id"], name: "index_countries_on_currency_id"
+  end
+
+  create_table "country_languages", force: :cascade do |t|
+    t.bigint "country_id"
+    t.bigint "language_id"
+    t.index ["country_id"], name: "index_country_languages_on_country_id"
+    t.index ["language_id"], name: "index_country_languages_on_language_id"
+  end
+
+  create_table "currencies", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -26,4 +55,7 @@ ActiveRecord::Schema.define(version: 20180401005903) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "countries", "currencies"
+  add_foreign_key "country_languages", "countries"
+  add_foreign_key "country_languages", "languages"
 end
