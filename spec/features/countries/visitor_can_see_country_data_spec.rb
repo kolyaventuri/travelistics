@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User visiting a country page' do
+describe 'Anyone visiting a country page' do
   before(:all) do
     DatabaseCleaner.clean
   end
