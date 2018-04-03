@@ -3,7 +3,7 @@ require 'bcrypt'
 # User
 class User < ApplicationRecord
   enum role: [:default, :admin]
-  
+
   validates_presence_of :name
   validates_presence_of :email
   validates_presence_of :password

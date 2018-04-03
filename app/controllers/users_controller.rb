@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   include SessionHelper
 
+  before_action :require_login, only: [:show, :update]
+
   def show
-    require_login!
   end
 
   def new
@@ -10,23 +11,21 @@ class UsersController < ApplicationController
   end
 
   def update
-    if params[:id].to_i != session[:user_id]
+    unless params[:id].to_i == current_user.id
       flash[:error] = 'You are not authorized to change that users password.'
       return redirect_to account_path
     end
 
-    user = User.find(params[:id])
-
-    if !User.authenticate(user.email, user_params[:current_password])
+    if !User.authenticate(current_user.email, user_params[:current_password])
       flash[:error] = 'You must enter your current password first.'
     elsif user_params[:password] != user_params[:password_confirmation]
       flash[:error] = 'Passwords must match.'
     else
-      user.update_password(user_params[:password])
-      if user.save
+      current_user.update_password(user_params[:password])
+      if current_user.save
         flash[:info] = 'Your password has been updated!'
       else
-        flash[:error] = 'An error occured.'
+        flash[r:error] = 'An error occured.'
       end
     end
 
