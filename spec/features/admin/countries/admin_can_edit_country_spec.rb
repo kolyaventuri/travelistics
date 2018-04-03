@@ -71,7 +71,7 @@ describe 'Admin' do
 
     expect(page).to have_content("Add language to #{@country.name}")
 
-    select(@language2.name, from: 'languages')
+    select(@language2.name, from: 'language[name]')
 
     click_on 'Add Language'
 

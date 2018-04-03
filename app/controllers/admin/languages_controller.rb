@@ -5,6 +5,8 @@ module Admin
 
     def new
       @country = Country.find(params[:country_id])
+      @language = Language.new
+      @languages = Language.all
     end
   end
 end
