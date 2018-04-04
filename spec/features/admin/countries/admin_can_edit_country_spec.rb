@@ -82,10 +82,16 @@ describe 'Admin' do
   end
 
   scenario 'can delete language from country' do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     visit edit_admin_country_path(@country)
+
+    expect(page).to have_content(@language.name)
 
     within("#language_#{@language.id}") do
       click_on 'Delete'
     end
+
+    expect(current_path).to eq(admin_country_path(@country))
+    expect(page).to_not have_content(@language.name)
   end
 end

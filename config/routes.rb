@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :countries, only: [:show]
-  get '/:country_1/:country_2', to: 'countries#render', as: 'countries_render'
+  get '/travel/:country_1/:country_2', to: 'countries#render', as: 'countries_render'
 
   root to: 'main#index'
 
