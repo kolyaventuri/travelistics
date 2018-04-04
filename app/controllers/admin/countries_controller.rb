@@ -27,6 +27,17 @@ module Admin
       end
     end
 
+    def destroy
+      @country = Country.find(params[:id])
+
+      if @country.destroy
+        redirect_to admin_countries_path
+      else
+        flash[:error] = 'Something went wrong'
+        render :edit
+      end
+    end
+
     def edit
       @country = Country.find(params[:id])
       @currencies = Currency.all
