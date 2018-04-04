@@ -33,7 +33,9 @@ module Admin
     private
 
     def country_params
-      params.require(:country).permit(:name, :code, :side_of_road)
+      params_with_cur = params.require(:country).permit(:name, :code, :side_of_road, :currency)
+      params_with_cur[:currency] = Currency.find(params_with_cur[:currency].to_i) if params_with_cur[:currency]
+      params_with_cur
     end
   end
 end
