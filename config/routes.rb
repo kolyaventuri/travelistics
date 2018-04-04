@@ -19,10 +19,11 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'admin#index'
 
+    resources :currencies, except: :show
+    resources :languages, except: :show
+
     resources :countries do
       resources :languages, to: "country_languages#", only: [:new, :create, :destroy]
     end
-
-    resources :currencies, except: :show
   end
 end

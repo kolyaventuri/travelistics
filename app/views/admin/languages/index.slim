@@ -1,0 +1,10 @@
+h1 Languages
+
+=link_to 'Add a Language', new_admin_language_path
+
+ul.languages
+  - @languages.find_each do |language|
+    li id="language_#{language.id}"
+      p #{language.name} (#{language.code})
+      =link_to 'Edit', edit_admin_language_path(language)
+      =link_to 'Delete', admin_language_path(language), method: 'Delete', data: {confirm: 'Are you sure?' }

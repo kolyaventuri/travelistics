@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 describe 'Authorization' do
+  before(:all) do
+    DatabaseCleaner.clean
+  end
+
+  after(:all) do
+    DatabaseCleaner.clean
+  end
+
   describe 'an admin' do
     scenario 'can access the languages list' do
       user = User.create!(
@@ -43,7 +51,7 @@ describe 'Admin' do
     language2 = Language.create!(name: 'Spanish', code: 'SP')
     language3 = Language.create!(name: 'Russian', code: 'RU')
 
-    @languages = [@language1, @language2, @language3]
+    @languages = [language1, language2, language3]
     @user = User.create!(
       name: 'Bob Ross',
       email: 'bob@bobross.com',
@@ -61,8 +69,8 @@ describe 'Admin' do
     visit admin_languages_path
 
     within('.languages') do
-      @languages.each do |currency|
-        expect(page).to have_content(currency.code)
+      @languages.each do |language|
+        expect(page).to have_content(language.code)
       end
     end
   end
