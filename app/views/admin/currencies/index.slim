@@ -2,5 +2,6 @@ h1 Currencies
 
 ul.currencies
   - @currencies.find_each do |currency|
-    li
+    li id="currency_#{currency.id}"
       p= currency.code
+      =link_to 'Edit', edit_admin_currency_path(currency)

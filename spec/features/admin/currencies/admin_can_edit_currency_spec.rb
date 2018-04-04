@@ -74,7 +74,7 @@ describe 'Admin' do
       expect(page).to have_content(@currency2.code)
     end
 
-    within("#curreny_#{@currency1.id}") do
+    within("#currency_#{@currency1.id}") do
       click_on 'Edit'
     end
 
