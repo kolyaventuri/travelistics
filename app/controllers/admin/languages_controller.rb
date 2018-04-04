@@ -7,6 +7,10 @@ module Admin
       @languages = Language.all
     end
 
+    def new
+      @language = Language.new
+    end
+
     def destroy
       language = Language.find(params[:id])
       flash[:error] = 'Could not delete language.' unless language.destroy
