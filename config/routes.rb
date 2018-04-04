@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :countries, only: [:show]
+  get '/:country_1/:country_2', to: 'countries#render', as: 'countries_render'
 
   root to: 'main#index'
 
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
     root to: 'admin#index'
 
     resources :countries do
-      resources :languages, only: [:new, :create, :destroy]
+      resources :languages, to: "country_languages#", only: [:new, :create, :destroy]
     end
   end
 end

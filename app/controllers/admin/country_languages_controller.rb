@@ -1,6 +1,6 @@
 # Admin::
 module Admin
-  class LanguagesController < BaseController
+  class CountryLanguagesController < BaseController
     before_action :require_admin
 
     def new
