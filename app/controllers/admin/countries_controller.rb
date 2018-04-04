@@ -12,6 +12,21 @@ module Admin
       @country = Country.find(params[:id])
     end
 
+    def new
+      @country = Country.new
+      @currencies = Currency.all
+    end
+
+    def create
+      @country = Country.new(country_params)
+      if @country.save
+        redirect_to admin_country_path(@country)
+      else
+        flash[:error] = 'An error occured.'
+        render :new
+      end
+    end
+
     def edit
       @country = Country.find(params[:id])
       @currencies = Currency.all

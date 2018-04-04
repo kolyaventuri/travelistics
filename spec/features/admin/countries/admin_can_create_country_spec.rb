@@ -40,12 +40,20 @@ describe 'Admin' do
     DatabaseCleaner.clean
     @currency = Currency.create!(code: 'USD')
     @currency2 = Currency.create!(code: 'GBP')
+    @user = User.create!(
+      name: 'Bob Ross',
+      email: 'bob@bobross.com',
+      password: 'happy_little_trees',
+      role: 1
+    )
   end
 
   after(:all) do
     DatabaseCleaner.clean
   end
   scenario 'can create a new country' do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
     country_data = {
       name: 'United States',
       code: 'US',
@@ -65,8 +73,8 @@ describe 'Admin' do
     expect(current_path).to eq(admin_country_path(Country.first))
     expect(page).to have_content(country_data[:name])
     expect(page).to have_content(country_data[:code])
-    expect(page).to have_content(country_data[:side_of_road])
+    expect(page).to have_content(country_data[:side_of_road].capitalize)
     expect(page).to have_content(country_data[:currency])
-    expect(page).to_not have_content(country_data[:currency])
+    expect(page).to_not have_content(@currency2.code)
   end
 end
