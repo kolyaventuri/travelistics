@@ -7,6 +7,10 @@ module Admin
       @currencies = Currency.all
     end
 
+    def new
+      @currency = Currency.new
+    end
+
     def edit
       @currency = Currency.find(params[:id])
     end

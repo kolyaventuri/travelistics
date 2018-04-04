@@ -1,5 +1,7 @@
 h1 Currencies
 
+=link_to 'Add a Currency', new_admin_currency_path
+
 ul.currencies
   - @currencies.find_each do |currency|
     li id="currency_#{currency.id}"
