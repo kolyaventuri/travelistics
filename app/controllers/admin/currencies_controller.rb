@@ -23,6 +23,14 @@ module Admin
       end
     end
 
+    def destroy
+      currency = Currency.find(params[:id])
+
+      flash[:error] = 'An error occured.' unless currency.destroy
+
+      redirect_to admin_currencies_path
+    end
+
     private
 
     def currency_params
