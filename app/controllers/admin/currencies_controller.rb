@@ -11,6 +11,17 @@ module Admin
       @currency = Currency.new
     end
 
+    def create
+      @currency = Currency.new(currency_params)
+      if @currency.save
+        flash[:info] = 'Currency added!'
+        redirect_to admin_currencies_path
+      else
+        flash[:error] = 'An error occured.'
+        render :new
+      end
+    end
+
     def edit
       @currency = Currency.find(params[:id])
     end
