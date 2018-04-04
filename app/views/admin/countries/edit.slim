@@ -1,0 +1,21 @@
+h1 Editing #{@country.name}
+
+= form_for [:admin, @country] do |f|
+  = f.label :name
+  = f.text_field :name
+
+  = f.label :code
+  = f.text_field :code
+
+  = f.label :side_of_road
+  = f.text_field :side_of_road
+
+  = f.submit 'Update Country'
+
+
+ul.languages
+  - @country.languages.find_each do |language|
+    li
+      p= language.name
+
+a href="#{new_admin_country_language_path(@country)}" Add Language

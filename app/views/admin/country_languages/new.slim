@@ -1,0 +1,7 @@
+h1 Add language to #{@country.name}
+
+= form_for [:admin, @country, @language] do |f|
+  = f.label :name, 'Language'
+  = f.collection_select :name, @languages, :id, :name
+
+  = f.submit 'Add Language'
