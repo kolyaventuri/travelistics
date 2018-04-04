@@ -72,7 +72,6 @@ describe 'Admin' do
 
     expect(current_path).to eq(edit_admin_language_path(@language))
     expect(page).to have_content(@language.name)
-    expect(page).to have_content(@language.code)
 
     new_name = 'Spanish'
     new_code = 'SP'

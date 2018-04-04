@@ -12,5 +12,9 @@ module Admin
       flash[:error] = 'Could not delete language.' unless language.destroy
       redirect_to admin_languages_path
     end
+
+    def edit
+      @language = Language.find(params[:id])
+    end
   end
 end
