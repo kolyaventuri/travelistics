@@ -17,6 +17,6 @@ ul.languages
   - @country.languages.find_each do |language|
     li id="language_#{language.id}"
       p= language.name
-      =link_to 'Delete', admin_country_path(@country), method: 'DELETE'
+      =link_to 'Delete', admin_country_language_path(@country, language_id: language.id), method: 'DELETE'
 
 a href="#{new_admin_country_language_path(@country)}" Add Language

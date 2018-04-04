@@ -91,7 +91,7 @@ describe 'Admin' do
       click_on 'Delete'
     end
 
-    expect(current_path).to eq(admin_country_path(@country))
+    expect(current_path).to eq(edit_admin_country_path(@country))
     expect(page).to_not have_content(@language.name)
   end
 end
