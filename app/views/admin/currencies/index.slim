@@ -1,0 +1,6 @@
+h1 Currencies
+
+ul.currencies
+  - @currencies.find_each do |currency|
+    li
+      p= currency.code
