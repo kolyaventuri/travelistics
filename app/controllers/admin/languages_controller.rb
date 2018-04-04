@@ -16,5 +16,23 @@ module Admin
     def edit
       @language = Language.find(params[:id])
     end
+
+    def update
+      @language = Language.find(params[:id])
+      @language.update(language_params)
+
+      if @language.save
+        redirect_to admin_languages_path
+      else
+        flash[:error] = 'An error was encountered.'
+        render :edit
+      end
+    end
+
+    private
+
+    def language_params
+      params.require(:language).permit(:name, :code)
+    end
   end
 end

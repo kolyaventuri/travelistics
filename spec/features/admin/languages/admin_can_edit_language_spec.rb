@@ -81,7 +81,7 @@ describe 'Admin' do
 
     click_on 'Update Language'
 
-    expect(page).to eq(admin_languages_path)
+    expect(current_path).to eq(admin_languages_path)
     expect(page).to have_content(new_name)
     expect(page).to_not have_content(@language.name)
   end
