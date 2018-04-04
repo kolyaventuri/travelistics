@@ -35,7 +35,8 @@ describe 'Admin' do
 
     visit edit_admin_country_path(@country)
 
-    click_on 'Delete'
+    click_on 'Delete Country'
+    page.driver.browser.accept_js_confirms
 
     expect(current_path).to eq(admin_countries_paths)
     within('.countries') do

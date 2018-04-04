@@ -1,4 +1,5 @@
 h1 Editing #{@country.name}
+=link_to 'Delete Country', admin_country_path(@country), method: 'DELETE',  data: { confirm: 'Are you sure?' }
 
 = form_for [:admin, @country] do |f|
   = f.label :name
