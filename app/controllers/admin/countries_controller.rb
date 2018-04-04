@@ -14,6 +14,7 @@ module Admin
 
     def edit
       @country = Country.find(params[:id])
+      @currencies = Currency.all
     end
 
     def update

@@ -14,6 +14,7 @@ describe 'Admin' do
   before(:each) do
     DatabaseCleaner.clean
     @currency = Currency.create!(code: 'USD')
+    @currency2 = Currency.create!(code: 'GBP')
     @language = Language.create!(name: 'English', code: 'EN')
     @language2 = Language.create!(name: 'Spanish', code: 'SP')
 
@@ -30,6 +31,7 @@ describe 'Admin' do
     name: 'Germany',
     code: 'DE',
     side_of_road: 'left',
+    currency: 'GBP',
     language: 'Spanish'
   }
 
@@ -47,6 +49,7 @@ describe 'Admin' do
     fill_in 'country[name]', with: new_data[:name]
     fill_in 'country[code]', with: new_data[:code]
     fill_in 'country[side_of_road]', with: new_data[:side_of_road]
+    select @currency2.code, from: 'country[currency]'
 
     click_on 'Update Country'
 
@@ -55,6 +58,7 @@ describe 'Admin' do
     expect(page).to have_content(new_data[:name])
     expect(page).to have_content(new_data[:code])
     expect(page).to have_content(new_data[:side_of_road].capitalize)
+    expect(page).to have_content(new_data[:currency])
   end
 
   scenario 'can add language to country' do
@@ -71,7 +75,7 @@ describe 'Admin' do
 
     expect(page).to have_content("Add language to #{@country.name}")
 
-    select(@language2.name, from: 'language[name]')
+    select @language2.name, from: 'language[name]'
 
     click_on 'Add Language'
 

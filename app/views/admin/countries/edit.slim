@@ -10,6 +10,9 @@ h1 Editing #{@country.name}
   = f.label :side_of_road
   = f.text_field :side_of_road
 
+  = f.label :currency
+  = f.collection_select :currency, @currencies, :id, :code, selected: @country.currency.id
+
   = f.submit 'Update Country'
 
 
