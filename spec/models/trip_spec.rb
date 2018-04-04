@@ -8,6 +8,8 @@ describe Trip, type: :model do
   describe 'relationships' do
     it { is_expected.to belong_to(:origin_country) }
     it { is_expected.to belong_to(:destination_country) }
+
+    it { is_expected.to belong_to(:user) }
   end
 
   describe 'attributes' do
@@ -27,6 +29,13 @@ describe Trip, type: :model do
         side_of_road: 'right',
         currency: currency
       )
+
+      @user = User.create!(
+        name: 'Bob Ross',
+        email: 'bob@bobross.com',
+        password: 'happy_little_trees',
+        role: 0
+      )
     end
 
     after(:all) do
@@ -37,7 +46,8 @@ describe Trip, type: :model do
       trip = Trip.create!(
         name: 'My Mexican Vacation',
         origin_country: @country,
-        destination_country: @country2
+        destination_country: @country2,
+        user: @user
       )
 
       expect(trip.origin_country).to be(@country)
