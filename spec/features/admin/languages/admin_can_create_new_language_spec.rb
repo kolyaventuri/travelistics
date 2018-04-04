@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'Authorization' do
   before(:all) do
     DatabaseCleaner.clean
-    @language = Language.create!(name: 'English', code: 'USD')
   end
 
   after(:all) do
@@ -11,7 +10,7 @@ describe 'Authorization' do
   end
 
   describe 'an admin' do
-    scenario 'can access the language edit page' do
+    scenario 'can access the language create page' do
       user = User.create!(
         name: 'Bob Ross',
         email: 'bob@bobross.com',
@@ -21,13 +20,13 @@ describe 'Authorization' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit edit_admin_language_path(@language)
-      expect(page).to have_content("Editing #{@language.name}")
+      visit new_admin_language_path
+      expect(page).to have_content('Create a Language')
     end
   end
 
   describe 'a regular user' do
-    scenario 'cannot access languages edit page' do
+    scenario 'cannot access languages create page' do
       user = User.create!(
         name: 'Bob Ross',
         email: 'bob@bobross.com',
@@ -37,8 +36,8 @@ describe 'Authorization' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit edit_admin_language_path(@language)
-      expect(page).to_not have_content("Editing #{@language.name}")
+      vvisit new_admin_language_path
+      expect(page).to_not have_content('Create a Language')
       expect(page).to have_content('The page you were looking for doesn\'t exist.')
     end
   end
@@ -47,8 +46,6 @@ end
 describe 'Admin' do
   before(:all) do
     DatabaseCleaner.clean
-
-    @language = Language.create!(name: 'English', code: 'EN')
 
     @user = User.create!(
       name: 'Bob Ross',
@@ -62,27 +59,25 @@ describe 'Admin' do
     DatabaseCleaner.clean
   end
 
-  scenario 'can edit a language' do
+  scenario 'can create a language' do
+    new_name = 'Spanish'
+    new_code = 'SP'
+
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     visit admin_languages_path
 
-    within("#language_#{@language.id}") do
-      click_on 'Edit'
-    end
+    expect(page).to_not have_content(new_name)
 
-    expect(current_path).to eq(edit_admin_language_path(@language))
-    expect(page).to have_content(@language.name)
+    click_on 'Add a Language'
 
-    new_name = 'Spanish'
-    new_code = 'SP'
+    expect(current_path).to eq(new_admin_language_path)
 
     fill_in 'language[name]', with: new_name
     fill_in 'language[code]', with: new_code
 
-    click_on 'Update Language'
+    click_on 'Create Language'
 
     expect(current_path).to eq(admin_languages_path)
     expect(page).to have_content(new_name)
-    expect(page).to_not have_content(@language.name)
   end
 end
