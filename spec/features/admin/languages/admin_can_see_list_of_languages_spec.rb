@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Authorization' do
   describe 'an admin' do
-    scenario 'can access the currencies list' do
+    scenario 'can access the languages list' do
       user = User.create!(
         name: 'Bob Ross',
         email: 'bob@bobross.com',
@@ -12,13 +12,13 @@ describe 'Authorization' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit admin_currencies_path
-      expect(page).to have_content('Currencies')
+      visit admin_languages_path
+      expect(page).to have_content('Languages')
     end
   end
 
   describe 'a regular user' do
-    scenario 'cannot access currencies list' do
+    scenario 'cannot access languages list' do
       user = User.create!(
         name: 'Bob Ross',
         email: 'bob@bobross.com',
@@ -28,8 +28,8 @@ describe 'Authorization' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit admin_currencies_path
-      expect(page).to_not have_content('Currencies')
+      visit admin_languages_path
+      expect(page).to_not have_content('Languages')
       expect(page).to have_content('The page you were looking for doesn\'t exist.')
     end
   end
@@ -39,11 +39,11 @@ describe 'Admin' do
   before(:all) do
     DatabaseCleaner.clean
 
-    codes = ['USD', 'GBP', 'RUB', 'MEX']
-    @currencies = codes.map do |code|
-      Currency.create!(code: code)
-    end
+    language1 = Language.create!(name: 'English', code: 'EN')
+    language2 = Language.create!(name: 'Spanish', code: 'SP')
+    language3 = Language.create!(name: 'Russian', code: 'RU')
 
+    @languages = [@language1, @language2, @language3]
     @user = User.create!(
       name: 'Bob Ross',
       email: 'bob@bobross.com',
@@ -56,12 +56,12 @@ describe 'Admin' do
     DatabaseCleaner.clean
   end
 
-  scenario 'can see list of currencies' do
+  scenario 'can see list of languages' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
-    visit admin_currencies_path
+    visit admin_languages_path
 
-    within('.currencies') do
-      @currencies.each do |currency|
+    within('.languages') do
+      @languages.each do |currency|
         expect(page).to have_content(currency.code)
       end
     end

@@ -19,7 +19,7 @@ describe 'Admin' do
     DatabaseCleaner.clean
   end
 
-  scenario 'can edit a currency' do
+  scenario 'can delete a currency' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     visit admin_currencies_path
 
