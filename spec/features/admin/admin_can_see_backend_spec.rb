@@ -12,8 +12,8 @@ describe 'Authorization' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit admin_root_path
-      expect(page).to have_content('Travelistics Admin')
+      visit admin_currencies_path
+      expect(page).to have_content('Currencies')
     end
   end
 
@@ -28,7 +28,7 @@ describe 'Authorization' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit admin_root_path
+      visit admin_currencies_path
       expect(page).to_not have_content('Travelistics Admin')
       expect(page).to have_content('The page you were looking for doesn\'t exist.')
     end
