@@ -1,4 +1,5 @@
 module Admin
+  # CurrencyController
   class CurrenciesController < BaseController
     before_action :require_admin
 
