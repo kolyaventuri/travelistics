@@ -23,6 +23,6 @@ Rails.application.routes.draw do
       resources :languages, to: "country_languages#", only: [:new, :create, :destroy]
     end
 
-    resources :currencies
+    resources :currencies, except: :show
   end
 end
