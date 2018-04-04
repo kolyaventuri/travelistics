@@ -11,6 +11,17 @@ module Admin
       @language = Language.new
     end
 
+    def create
+      @language = Language.new(language_params)
+
+      if @language.save
+        redirect_to admin_languages_path
+      else
+        flash[:error] = 'An error occured.'
+        render :new
+      end
+    end
+
     def destroy
       language = Language.find(params[:id])
       flash[:error] = 'Could not delete language.' unless language.destroy
