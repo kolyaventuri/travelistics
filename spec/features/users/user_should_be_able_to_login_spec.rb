@@ -25,7 +25,9 @@ describe 'User visiting /login' do
       fill_in 'user[email]', with: user[:email]
       fill_in 'user[password]', with: user[:password]
 
-      click_on 'Login'
+      within('.container') do
+        click_on 'Login'
+      end
 
       expect(current_path).to eq(account_path)
     end
@@ -38,7 +40,9 @@ describe 'User visiting /login' do
       fill_in 'user[email]', with: 'invalid'
       fill_in 'user[password]', with: 'invalid'
 
-      click_on 'Login'
+      within('.container') do
+        click_on 'Login'
+      end
 
       expect(page).to have_content('Your email or password was incorrect.')
 
