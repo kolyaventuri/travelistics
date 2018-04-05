@@ -18,14 +18,15 @@ describe 'Authorization' do
     scenario 'can access their trips' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
-      visit user_trips_path
+      visit trips_path
       expect(page).to have_content('Your Trips')
     end
   end
 
   describe 'a visitor' do
     scenario 'is redirected to the login page' do
-      visit user_trips_path
+      visit trips_path
+
       expect(page).to_not have_content('Your Trips')
       expect(current_path).to eq(login_path)
     end

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root to: 'main#index'
 
   resources :users, only: [:create, :update]
+
+  resources :trips
+
   get '/register', to: 'users#new', as: 'registration'
   get '/login', to: 'sessions#login', as: 'login'
 
