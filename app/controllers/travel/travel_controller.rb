@@ -3,8 +3,8 @@ module Travel
   # Travel Controller
   class TravelController < ApplicationController
     def show
-      @country1 = Country.find(params[:country_1])
-      @country2 = Country.find(params[:country_2])
+      @country1 = Country.find_by(code: params[:country_1])
+      @country2 = Country.find_by(code: params[:country_2])
 
       @language_string = @country2.languages.map do |lang|
         lang.name
