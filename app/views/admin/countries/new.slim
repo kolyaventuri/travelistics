@@ -13,7 +13,7 @@ h1 Add Country
   = f.label :currency
   = f.collection_select :currency, @currencies, :id, :code
 
-  = f.submit
+  = f.submit nil, class: 'button primary'
 
 javascript:
   var elem = document.querySelector('select');

@@ -1,14 +1,56 @@
-.center-align
-  h2 Where would you like to travel today?
-
+#hero
   = form_tag('/travel')
-  .row
-    .col.s4
-       = label_tag 'origin'
-       = text_field_tag 'origin'
-    .col.s4
-       = label_tag 'destination'
-       = text_field_tag 'destination'
-    .col.s4
-      = submit_tag 'Lets Go!', class: 'btn green'
+    .row#headerBar
+    	.small-12.columns.noPadding
+    		#text.text-center
+    			h1 Lets Go.
+    #input-row.row.side-padding
+    	.large-5.columns#travelFrom.small-12.medium-4
+          = text_field_tag 'origin', nil, id: 'input-1', class: 'travelinput', size: '20', type: 'text'
+    	.large-2.columns.show-for-large-up.small-0.medium-4
+    		  img(src="#{asset_url('arrow.png')}", alt='To')
+    	.large-5.columns.small-0.medium-4
+          = text_field_tag 'destination', nil, id: 'input-1', class: 'travelinput', size: '20', type: 'text'
+    #button-row.row.side-padding
+    	.large-12
+        = submit_tag 'Begin', id: 'beginButton', class: 'button radius'
+
+#process-info
+		.row.side-padding
+			.large-12.text-center
+				h1 Let us do the work.
+				p You're on vacation. Why worry?
+				hr
+
+		//- info paragraphs
+		ul#process-info-text.row.small-block-grid-1.medium-block-grid-3.large-block-grid-3.side-padding
+			li.text-center
+				i.far.fa-compass.size-72
+				h3.text-center Setup.
+				p.text-center
+					| Just tell us where you're going.
+			li.text-center
+				i.far.fa-cog.size-72
+				h3.text-center Prepare
+				p.text-center
+					| We find all the relevant information.s
+			li.text-center
+				i.far.fa-cloud.size-72
+				h3.text-center Relax.
+				p.text-center
+					| Rest easy knowing that you're ready for travel.
+
+/ .center-align
+/   h2 Where would you like to travel today?
+/
+/   = form_tag('/travel')
+/   .row
+/     .col.s4
+/        = label_tag 'origin'
+/        = text_field_tag 'origin'
+/     .col.s4
+/        = label_tag 'destination'
+/        = text_field_tag 'destination'
+/     .col.s4
+/       = submit_tag 'Lets Go!', class: 'btn green'
 

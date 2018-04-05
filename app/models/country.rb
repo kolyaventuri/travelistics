@@ -6,7 +6,7 @@ class Country < ApplicationRecord
 
   validates_uniqueness_of :code
 
-  belongs_to :currency
+  belongs_to :currency, dependent: :destroy
   has_many :country_languages
   has_many :languages, through: :country_languages
 end

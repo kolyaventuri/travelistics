@@ -27,20 +27,20 @@ describe 'User visits page for travel to two countries' do
   scenario 'sees the data for those two countries' do
     visit "/travel/#{@country.code}/#{@country2.code}"
 
-    expect(page).to have_content("Traveling from #{@country.name} to #{@country2.name}")
+    expect(page).to have_content("#{@country.name} to #{@country2.name}")
 
     expect(page).to have_content("#{@country2.name} uses the #{@country2.currency.code}")
 
-    expect(page).to have_content("#{@country2.name} speaks #{@country2.languages.first.name}")
+    expect(page).to have_content("The primary language spoken in #{@country2.name} is #{@country2.languages.first.name}")
   end
 
   scenario 'sees the data for a country with similar information' do
     visit "/travel/#{@country.code}/#{@country3.code}"
 
-    expect(page).to have_content("Traveling from #{@country.name} to #{@country3.name}")
+    expect(page).to have_content("#{@country.name} to #{@country3.name}")
 
-    expect(page).to have_content("#{@country3.name} also uses the #{@country3.currency.code}")
+    expect(page).to have_content("#{@country3.name} uses the #{@country3.currency.code}")
 
-    expect(page).to have_content("#{@country3.name} speaks #{@country3.languages.first.name} and #{@country3.languages.last.name}")
+    expect(page).to have_content("The primary languages spoken in #{@country3.name} are #{@country3.languages.first.name} and #{@country3.languages.last.name}")
   end
 end

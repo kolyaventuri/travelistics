@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  layout 'contained'
   protect_from_forgery with: :exception
   helper_method :current_user
 

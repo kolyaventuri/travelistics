@@ -11,6 +11,7 @@ html
     = stylesheet_link_tag 'global'
     = stylesheet_link_tag 'app'
     = stylesheet_link_tag 'index'
+    = stylesheet_link_tag 'link_fix'
 
     = javascript_include_tag 'application'
     = javascript_include_tag 'https://pro.fontawesome.com/releases/v5.0.9/js/all.js',\
@@ -55,7 +56,12 @@ html
               a(href=login_path) Login
 
     .container
-      == yield
+      .row
+        .columns.medium-3 &nbsp;
+        .columns.medium-6.white
+          ==yield
+
+        .columns.medium-3 &nbsp;
 
     #info-bar
       .row.side-padding
