@@ -1,0 +1,10 @@
+h1 Currencies
+
+=link_to 'Add a Currency', new_admin_currency_path
+
+ul.currencies
+  - @currencies.find_each do |currency|
+    li id="currency_#{currency.id}"
+      p= currency.code
+      =link_to 'Edit', edit_admin_currency_path(currency)
+      =link_to 'Delete', admin_currency_path(currency), method: 'Delete', data: {confirm: 'Are you sure?' }

@@ -1,0 +1,6 @@
+h1 Countries
+
+ul.countries
+  - @countries.find_each do |country|
+    li
+      a href="#{admin_country_path(country)}" #{country.name}

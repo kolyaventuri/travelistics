@@ -1,0 +1,7 @@
+h1 Add a Currency
+
+= form_for [:admin, @currency] do |f|
+  = f.label :code
+  = f.text_field :code
+
+  = f.submit 'Add Currency'

@@ -1,0 +1,13 @@
+h1= @country.name
+h2= @country.code
+h2 #{@country.side_of_road.capitalize} side of road
+
+h2= @country.currency.code
+
+ul.languages
+  - @country.languages.find_each do |language|
+    li= language.name
+
+= link_to 'Edit', edit_admin_country_path(@country)
+
+

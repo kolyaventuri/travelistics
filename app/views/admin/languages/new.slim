@@ -1,0 +1,10 @@
+h1 Create a Language
+
+= form_for [:admin, @language] do |f|
+  = f.label :name
+  = f.text_field :name
+
+  = f.label :code
+  = f.text_field :code
+
+  = f.submit
