@@ -10,6 +10,12 @@ module Travel
         lang.name
       end.to_sentence
 
+      @save_params = {
+        name: "My trip from #{@country1.name} to #{@country2.name}",
+        origin_country: @country1,
+        destination_Country: @country_2
+      }
+
       render :'travel/show'
     end
   end
