@@ -1,0 +1,7 @@
+h1 Your Trips
+
+ul.trips
+  - @trips.find_each do |trip|
+    li id="trip_#{trip.id}"
+      p #{trip.origin_country.name} to #{trip.destination_country.name}
+      = link_to 'Delete', trip_path(trip), method: 'DELETE', class: 'delete'
