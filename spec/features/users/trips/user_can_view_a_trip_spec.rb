@@ -58,7 +58,7 @@ describe 'Someone visiting a trip as' do
 
       visit trip_path(@trip)
       expect(page).to_not have_content(@trip.name)
-      expect(path).to eq(trips_path)
+      expect(current_path).to eq(trips_path)
     end
   end
 
