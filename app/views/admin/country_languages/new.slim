@@ -4,7 +4,7 @@ h1 Add language to #{@country.name}
   = f.label :name, 'Language'
   = f.collection_select :name, @languages, :id, :name
 
-  = f.submit 'Add Language'
+  = f.submit 'Add Language', class: 'button primary'
 
 
 javascript:

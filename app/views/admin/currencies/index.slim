@@ -6,5 +6,5 @@ ul.currencies.collection
   - @currencies.find_each do |currency|
     li.collection-item id="currency_#{currency.id}"
       p= currency.code
-      =link_to 'Edit', edit_admin_currency_path(currency), class: 'btn green'
-      =link_to 'Delete', admin_currency_path(currency), class: 'btn red', method: 'Delete', data: {confirm: 'Are you sure?' }
+      =link_to 'Edit', edit_admin_currency_path(currency), class: 'button primary'
+      =link_to 'Delete', admin_currency_path(currency), class: 'button alert', method: 'delete', data: {confirm: 'Are you sure?' }

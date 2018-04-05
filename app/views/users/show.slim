@@ -10,4 +10,5 @@ h1 Welcome #{current_user.name}!
   = f.label :password_confirmation
   = f.password_field :password_confirmation
 
-  = f.submit 'Change Password'
+  = f.submit 'Change Password', class: 'button primary'
+

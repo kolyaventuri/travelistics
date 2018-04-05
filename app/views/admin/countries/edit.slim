@@ -1,5 +1,5 @@
 h1 Editing #{@country.name}
-=link_to 'Delete Country', admin_country_path(@country), method: 'DELETE',  data: { confirm: 'Are you sure?' }
+=link_to 'Delete Country', admin_country_path(@country), method: 'DELETE',  data: { confirm: 'Are you sure?' }, class: 'button alert'
 
 = form_for [:admin, @country] do |f|
   = f.label :name
@@ -15,16 +15,16 @@ h1 Editing #{@country.name}
     = f.label :currency
     = f.collection_select :currency, @currencies, :id, :code, selected: @country.currency.id
 
-  = f.submit 'Update Country', class: 'btn'
+  = f.submit 'Update Country', class: 'button primary'
 
 
 ul.languages.collection
   - @country.languages.find_each do |language|
     li.collection-item id="language_#{language.id}"
       p= language.name
-      =link_to 'Delete', admin_country_language_path(@country, language_id: language.id), method: 'DELETE'
+      =link_to 'Delete', admin_country_language_path(@country, language_id: language.id), method: 'delete', class: 'button alert'
 
-a href="#{new_admin_country_language_path(@country)}" Add Language
+a.button href="#{new_admin_country_language_path(@country)}" Add Language
 
 javascript:
   var elem = document.querySelector('select');

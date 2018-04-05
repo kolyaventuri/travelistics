@@ -6,5 +6,5 @@ ul.languages.collection
   - @languages.find_each do |language|
     li.collection-item id="language_#{language.id}"
       p #{language.name} (#{language.code})
-      =link_to 'Edit', edit_admin_language_path(language), class: 'btn green'
-      =link_to 'Delete', admin_language_path(language), class: 'btn red', method: 'Delete', data: {confirm: 'Are you sure?' }
+      =link_to 'Edit', edit_admin_language_path(language), class: 'button primary'
+      =link_to 'Delete', admin_language_path(language), class: 'button alert', method: 'Delete', data: {confirm: 'Are you sure?' }

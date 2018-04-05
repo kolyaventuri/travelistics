@@ -1,14 +1,12 @@
-.row
-  .col.s12.m6.push-m3
-    h3 Login
+h3 Login
 
-    = form_for @user, url: {action: 'authenticate'} do |f|
-      = f.label :email
-      = f.text_field :email
+= form_for @user, url: {action: 'authenticate'} do |f|
+  = f.label :email
+  = f.text_field :email
 
-      = f.label :password
-      = f.password_field :password
+  = f.label :password
+  = f.password_field :password
 
-      = f.submit 'Login', class: 'btn'
+  = f.submit 'Login', class: 'button primary'
 
-      = link_to 'Create an Account', registration_path
+  = link_to 'Create an Account', registration_path, class: 'button secondary'

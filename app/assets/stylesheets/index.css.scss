@@ -1,0 +1,17 @@
+#errorBar{display:none}#errorBar .email{border:0;background:0;padding:0;font-size:inherit;text-decoration:underline}#errorBar #errorContainer{background:rgba(0,0,0,0.5);border-radius:5px;padding:1em}#errorBar #errorContainer h2,#errorBar #errorContainer h3{color:#FFF}#headerBar h1{font-weight:bold;font-size:3.5em}#headerBar *{color:#FFF}#input-1,#input-2{width:auto}#travelFrom .crosshairs{background:White;border-radius:50%;display:inline-block;width:2.5em;height:2.5em;position:absolute;top:50%;right:1%;transform:translateY(-50%);box-shadow:1px 1px 5px rgba(0,0,0,0.5);cursor:pointer}#travelFrom .crosshairs i{color:#545454;font-size:1.5em;position:absolute;top:50%;left:50%;transform:translate(-49%, -50%);-webkit-transition:color 0.15s;transition:color 0.15s}#travelFrom .crosshairs i.blue{color:#5C94EA}#travelFrom .crosshairs i.red{color:#cb3535}#travelFrom *{display:inline}
+
+.travelinput {
+  overflow-x: hidden;
+  width: 100% !important;
+  font-family: Arial !important;
+}
+
+#beginButton {
+  font-size: 2.5em !important;
+
+  font-family: Arial !important;
+
+  border: 1px solid gray !important;
+  padding: 0.5em !important;
+  background: rgba(33, 150, 243, 0.25) !important;
+}
