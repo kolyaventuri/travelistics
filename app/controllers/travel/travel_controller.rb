@@ -14,6 +14,8 @@ module Travel
                       .matches("%#{params[:destination].downcase}%")
                   ).first
 
+      return redirect_to root_path if country1.nil? || country2.nil?
+
       redirect_to "/travel/#{country1.code}/#{country2.code}"
     end
 

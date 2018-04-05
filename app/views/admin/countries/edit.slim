@@ -11,16 +11,21 @@ h1 Editing #{@country.name}
   = f.label :side_of_road
   = f.text_field :side_of_road
 
-  = f.label :currency
-  = f.collection_select :currency, @currencies, :id, :code, selected: @country.currency.id
+  div.input-field
+    = f.label :currency
+    = f.collection_select :currency, @currencies, :id, :code, selected: @country.currency.id
 
-  = f.submit 'Update Country'
+  = f.submit 'Update Country', class: 'btn'
 
 
-ul.languages
+ul.languages.collection
   - @country.languages.find_each do |language|
-    li id="language_#{language.id}"
+    li.collection-item id="language_#{language.id}"
       p= language.name
       =link_to 'Delete', admin_country_language_path(@country, language_id: language.id), method: 'DELETE'
 
 a href="#{new_admin_country_language_path(@country)}" Add Language
+
+javascript:
+  var elem = document.querySelector('select');
+  var instance = M.FormSelect.init(elem);

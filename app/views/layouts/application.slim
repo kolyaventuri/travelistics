@@ -20,9 +20,14 @@ html
           -if current_user
             li
               a(href=trips_path) My Trips
+            -if current_user.admin?
+              li
+                a(href=admin_root_path) Admin
             li
               a(href=logout_path) Logout
+
           -else
             li
               a(href=login_path) Login
-    == yield
+    .container
+      == yield
