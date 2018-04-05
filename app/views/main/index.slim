@@ -1,1 +1,14 @@
-h1 Travelistics
+.container.center-align
+  h2 Where would you like to travel today?
+
+  = form_tag('/travel')
+  .row
+    .col.s4
+       = label_tag 'origin'
+       = text_field_tag 'origin'
+    .col.s4
+       = label_tag 'destination'
+       = text_field_tag 'destination'
+    .col.s4
+      = submit_tag 'Lets Go!', class: 'btn green'
+
