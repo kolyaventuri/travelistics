@@ -80,7 +80,7 @@ describe 'User visits /trips' do
     visit trips_path
 
     within('.trips') do
-      within("#trip_#{@trip.id}") do
+      within("#trip_#{@trip1.id}") do
         expect(page).to have_content("#{@country.name} to #{@country2.name}")
       end
 
