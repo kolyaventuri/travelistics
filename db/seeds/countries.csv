@@ -1,0 +1,242 @@
+Country Code,Country Name,What side of Road?,Currency,Plug Type,Power Voltage,Languages
+AF,Afghanistan,right,AFN,"Type A, Type F",220V,"ps, uz, tk"
+AX,Aland Islands,right,EUR,"Type, C, Type E, Type F","220V, 240V",sv
+AL,Albania,right,ALL,"Type C, Type F",230V,sq
+DZ,Algeria,right,IQD,"Type C, Type F",230V,ar
+AS,American Samoa,right,USD,"Type A, Type B, Type F, Type I",120V,"en, sm"
+AD,Andorra,right,EUR,"Type C, Type F",230V,ca
+AO,Angola,right,AOA,Type C,220V,pt
+AI,Anguilla,left,XCD,Type-A,110V,en
+AG,Antigua and Barbuda,left,XCD,"Type A, Type B",230V,en
+AR,Argentina,right,ARS,"Type C, Type I",220V,"es, gn"
+AM,Armenia,right,AMD,"Type C, Type F",230V,"hy, ru"
+AW,Aruba,right,AWG,"Type A, Type B, Type F",127V,"nl, pa"
+AU,Australia,left,AUD,Type I,230V,en
+AT,Austria,right,EUR,"Type C, Type F",230V,de
+AZ,Azerbaijan,right,AZN,"Type C, Type F",220V,"az, hy"
+BS,Bahamas,left,BSD,"Type A, Type B",120V,en
+BH,Bahrain,right,BHD,Type G,230V,ar
+BD,Bangladesh,left,BDT,"Type C, Type D, Type G, Type K",220V,bn
+BB,Barbados,left,BBD,"Type A, Type B",115V,en
+BY,Belarus,right,BYR,"Type C, Type F",220V,"be, ru"
+BE,Belgium,right,EUR,"Type C, Type E",230V,"nl, fr, de"
+BZ,Belize,right,BZD,"Type A, Type B, Type G","120V, 220V","en, es"
+BJ,Benin,right,XOF,"Type C, Type E",220V,fr
+BM,Bermuda,left,BMD,"Type A, Type B",120V,en
+BT,Bhutan,left,BTN,"Type C, Type D, Type F, Type G, Type M",230V,dz
+BO,Bolivia,right,BOB,"Type A, Type C","115V, 230V","es, ay, qu"
+BA,Bosnia and Herzegovina,right,BAM,"Type C, Type F",230V,"bs, hr, sr"
+BW,Botswana,left,BWP,"Type D, Type G, Type M",230V,"en, tn"
+BV,Bouvet Island,right,NOK,Unknown,Unknown,no
+BR,Brazil,right,BRL,"Type C, Type N","127V, 220V",pt
+IO,British Indian Ocean Territory,right,USD,Type G,230V,en
+BN,Brunei Darussalam,left,BND,Type G,240V,ms
+BG,Bulgaria,right,BGN,"Type C, Type F",230V,bg
+BF,Burkina Faso,right,XOF,"Type C, Type E",220V,"fr, ff"
+BI,Burundi,right,BIF,"Type C, Type E",220V,"fr, rn"
+KH,Cambodia,right,KHR,"Type A, Type C, Type G",230V,km
+CM,Cameroon,right,XAF,"Type C, Type E",220V,"en, fr"
+CA,Canada,right,CAD,"Type A, Type B",120V,"en, fr"
+CV,Cape Verde,right,CVE,"Type C, Type F",220V,pt
+KY,Cayman Islands,left,KYD,"Type A, Type B",120V,en
+CF,Central African Republic,right,XAF,"Type C, Type E",220V,"fr, sg"
+TD,Chad,right,XAF,"Type C, Type D, Type E, Type F",220V,"fr, ar"
+CL,Chile,right,CLF,"Type C, Type L",220V,es
+CN,China,right,CNY,"Type A, Type C, Type I",220V,zh
+CX,Christmas Island,left,AUD,Type C,240V,en
+CC,Cocos (Keeling) Islands,left,AUD,Type C,240V,en
+CO,Colombia,right,COP,"Type A, Type B",110V,es
+KM,Comoros,right,KMF,"Type C, Type E",220V,"ar, fr"
+CG,Congo,right,XAF,"Type C, Type E",230V,"fr, ln"
+CD,"Congo, The Democratic Republic of the",right,CDF,"Type C, Type D, Type E",220V,"fr, ln, kg, sw, lu"
+CK,Cook Islands,left,NZD,Type I,240V,en
+CR,Costa Rica,right,CRC,"Type A, Type B",120V,es
+CI,Cote D'Ivoire,right,XOF,"Type C, Type E",230V,fr
+HR,Croatia,right,HRK,"Type C, Type F",230V,hr
+CU,Cuba,right,CUC,"Type A, Type B",110V,es
+CY,Cyprus,left,EUR,Type G,240V,"el, tr, hy"
+CZ,Czech Republic,right,CZK,"Type C, Type E",230V,"cs, sk"
+DK,Denmark,right,DKK,"Type C, Type F, Type E, Type K",230V,da
+DJ,Djibouti,right,DJF,"Type C, Type E",220V,"fr, ar"
+DM,Dominica,left,XCD,"Type D, Type G",230V,en
+DO,Dominican Republic,right,DOP,"Type A, Type B",110V,es
+EC,Ecuador,right,USD,"Type A, Type B",120V,es
+EG,Egypt,right,EGP,"Type C, Type F",220V,ar
+SV,El Salvador,right,SVC,"Type A, Type B",115V,es
+GQ,Equatorial Guinea,right,XAF,"Type C, Type E",220V,"es, fr"
+ER,Eritrea,right,XAF,"Type C, Type L",230V,"ti, ar, en"
+EE,Estonia,right,EUR,"Type C, Type F",230V,et
+ET,Ethiopia,right,ETB,"Type C, Type E, Type F, Type L",220V,am
+FK,Falkland Islands (Malvinas),left,FKP,Type G,240V,en
+FO,Faroe Islands,right,DKK,"Type C, Type F, Type E, Type K",230V,fo
+FJ,Fiji,left,FJD,Type I,240V,"en, fj, hi, ur"
+FI,Finland,right,EUR,"Type C, Type F",230V,"fi, sv"
+FR,France,right,EUR,"Type C, Type E",230V,fr
+GF,French Guiana,right,EUR,"Type C, Type D, Type E",220V,fr
+PF,French Polynesia,right,EUR,"Type A, Type B","110V, 220V",fr
+TF,French Southern Territories,right,EUR,"Type C, Type E",230V,fr
+GA,Gabon,right,XAF,Type C,220V,fr
+GM,Gambia,right,GMD,Type G,230V,en
+GE,Georgia,right,GEL,"Type C, Type F",220V,ka
+DE,Germany,right,EUR,"Type C, Type F",230V,de
+GH,Ghana,right,GHS,"Type D, Type G",230V,en
+GI,Gibraltar,right,GIP,"Type C, Type G",240V,en
+GR,Greece,right,EUR,"Type C, Type F",230V,el
+GL,Greenland,right,DKK,"Type C, Type F, Type E, Type K",230V,kl
+GD,Grenada,left,XCD,Type G,230V,en
+GP,Guadeloupe,right,EUR,"Type C, Type D, Type E",230V,fr
+GU,Guam,right,USD,"Type A, Type B",110V,"en, ch, es"
+GT,Guatemala,right,GTQ,"Type A, Type B",120V,es
+GG,Guernsey,left,GBP,Type C,230V,"en, fr"
+GN,Guinea,right,GNF,"Type C, Type F, Type K",220V,"fr, ff"
+GW,Guinea-Bissau,right,XOF,Type C,220V,pt
+GY,Guyana,left,GYD,"Type A, Type B, Type D, Type G",240V,en
+HT,Haiti,right,HTG,"Type A, Type B",110V,"fr, ht"
+HM,Heard Island and Mcdonald Islands,right,AUD,Type I,230V,en
+HN,Honduras,right,HNL,"Type A, Type B",110V,es
+HK,Hong Kong,left,HKD,"Type G, Type D",220V,"zh, en"
+HU,Hungary,right,HUF,"Type C, Type F",230V,hu
+IS,Iceland,right,ISK,"Type C, Type F",230V,is
+IN,India,left,INR,"Type C, Type D, Type M",230V,"hi, en"
+ID,Indonesia,left,IDR,"Type C, Type F","220V, 110V",id
+IR,Iran,right,IRR,"Type C, Type F",220V,fa
+IQ,Iraq,right,IQD,"Type C, Type D, Type G",230V,"ar, ku"
+IE,Ireland,left,EUR,Type G,230V,"ga, en"
+IM,Isle of Man,left,GBP,"Type C, Type G",240V,"en, gv"
+IL,Israel,right,ILS,"Type C, Type H, Type M",230V,"he, ar"
+IT,Italy,right,EUR,"Type C, Type F, Type L",230V,it
+JM,Jamaica,left,JMD,"Type A, Type B",110V,en
+JP,Japan,left,JPY,"Type A, Type B",100V,ja
+JE,Jersey,left,GBP,"Type C, Type G",230V,"en, fr"
+JO,Jordan,right,JOD,"Type B, Type C, Type D, Type F, Type G, Type J",230V,ar
+KZ,Kazakhstan,right,KZT,"Type C, Type F",220V,"kk, ru"
+KE,Kenya,left,KES,Type G,240V,"en, sw"
+KI,Kiribati,left,AUD,Type I,240V,en
+KP,"Korea, Democratic People's Republic of",right,KPW,"Type A, Type C, Type F","220V, 110V",ko
+KR,"Korea, Republic of",right,KRW,"Type C, Type F",220V,ko
+KW,Kuwait,right,KWD,"Type C, Type G",240V,ar
+KG,Kyrgyzstan,right,KGS,"Type C, Type F",220V,"ky, ru"
+LA,Lao People's Democratic Republic,right,LAK,"Type A, Type B, Type C, Type E, Type F",230V,lo
+LV,Latvia,right,LVL,"Type C, Type F",230V,lv
+LB,Lebanon,right,LBP,"Type A, Type B, Type C, Type D, Type G",220V,"ar, fr"
+LS,Lesotho,left,LSL,Type M,220V,"en, st"
+LR,Liberia,right,LRD,"Type A, Type B, Type C, Type E, Type F","120V, 220V",en
+LY,Libya,right,LYD,"Type C, Type D, Type F, Type L","127V, 230V",ar
+LI,Liechtenstein,right,CHF,"Type C, Type J",230V,de
+LT,Lithuania,right,LTL,"Type C, Type F",220V,it
+LU,Luxembourg,right,EUR,"Type C, Type F",230V,"fr, de, lb"
+MO,Macao,left,MOP,"Type D, Type M, Type G, Type F",220V,"zh, pt"
+MK,Macedonia,right,MKD,"Type C, Type F",230V,mk
+MG,Madagascar,right,MGA,"Type C, Type D, Type E, Type J, Type K","127V, 220V","fr, mg"
+MW,Malawi,left,MWK,Type G,230V,"en, ny"
+MY,Malaysia,left,MYR,"Type A, Type C, Type G, Type M",240V,my
+MV,Maldives,left,MVR,"Type A, Type C, Type D, Type G, Type J, Type K, Type L",230V,dv
+ML,Mali,right,XOF,"Type C, Type E",220V,fr
+MT,Malta,left,EUR,Type G,230V,"mt, en"
+MH,Marshall Islands,right,USD,"Type A, Type B","110V, 220V","en, mh"
+MQ,Martinique,right,EUR,"Type C, Type D, Type E",220V,fr
+MR,Mauritania,right,MRO,"Type C, Type D, Type E",220V,ar
+MU,Mauritius,left,MUR,Type C,220V,en
+YT,Mayotte,right,EUR,"Type C, Type E, Type F","220V, 240V",fr
+MX,Mexico,right,MXN,"Type A, Type B",127V,es
+FM,"Micronesia, Federated States of",right,USD,"Type A, Type B",120V,en
+MD,"Moldova, Republic of",right,MDL,"Type C, Type F",220V,ro
+MC,Monaco,right,EUR,"Type C, Type D, Type E, Type F",230V,fr
+MN,Mongolia,right,MNT,"Type C, Type E",220V,mn
+MS,Montserrat,left,EUR,"Type A, Type B",230V,en
+MA,Morocco,right,XCD,"Type C, Type E","127V, 220V",ar
+MZ,Mozambique,left,MAD,"Type C, Type F, Type M",220V,pt
+MM,Myanmar,right,MZN,"Type C, Type D, Type F, Type G",230V,my
+NA,Namibia,left,MMK,"Type D, Type M",220V,"en, af"
+NR,Nauru,left,NAD,Type I,240V,"na, en"
+NP,Nepal,left,NPR,"Type C, Type D, Type M",230V,ne
+NL,Netherlands,right,EUR,"Type C, Type F",230V,nl
+AN,Netherlands Antilles,right,EUR,"Type A, Type B, Type C, Type F","127V, 220V","nl, en, pap"
+NC,New Caledonia,right,XPF,"Type C, Type F",220V,fr
+NZ,New Zealand,left,NZD,Type I,230V,"en, mi"
+NI,Nicaragua,right,NIO,"Type A, Type B",120V,es
+NE,Niger,right,XOF,"Type A, Type B, Type C, Type D, Type E, Type F",220V,fr
+NG,Nigeria,right,NGN,"Type D, Type G",230V,en
+NU,Niue,left,NZD,Type I,230V,en
+NF,Norfolk Island,left,AUD,Type C,240V,en
+MP,Northern Mariana Islands,right,USD,"Type A, Type B",115V,"en, ch"
+NO,Norway,right,NOK,"Type C, Type F",230V,"no, nb, nn"
+OM,Oman,right,OMR,"Type C, Type G",240V,ar
+PK,Pakistan,left,PKR,"Type C, Type D, Type G, Type M",230V,"en, ur"
+PW,Palau,right,USD,"Type A, Type B",120V,en
+PS,"Palestinian Territory, Occupied",right,NONE,"Type C, Type H, Type M",230V,ar
+PA,Panama,right,USD,"Type A, Type B",110V,es
+PG,Papua New Guinea,right,PGK,Type I,240V,en
+PY,Paraguay,right,PYG,Type C,220V,"es, gn"
+PE,Peru,right,PEN,"Type A, Type B, Type C",220V,es
+PH,Philippines,right,PHP,"Type A, Type B, Type C",220V,en
+PN,Pitcairn,left,NZD,Type G,240V,en
+PL,Poland,right,PLN,"Type C, Type E",230V,pl
+PT,Portugal,right,EUR,"Type C, Type F",230V,pt
+PR,Puerto Rico,right,USD,"Type A, Type B",120V,"es, en"
+QA,Qatar,right,QAR,"Type D, Type G",240V,ar
+RE,Reunion,right,EUR,Type E,220V,fr
+RO,Romania,right,RON,"Type C, Type F",230V,ro
+RU,Russian Federation,right,RUB,"Type C, Type F",220V,ru
+RW,Rwanda,right,RWF,"Type C, Type J",230V,"rw, en, fr"
+SH,Saint Helena,left,SHP,"Type G, Type D",230V,en
+KN,Saint Kitts and Nevis,left,XCD,"Type A, Type B, Type D, Type G",230V,en
+LC,Saint Lucia,left,XCD,Type G,240V,en
+PM,Saint Pierre and Miquelon,right,EUR,Type E,220V,fr
+VC,Saint Vincent and the Grenadines,left,XCD,"Type A, Type C, Type E, Type G, Type I, Type K",230V,en
+WS,Samoa,left,WST,Type I,230V,"sm, en"
+SM,San Marino,right,EUR,"Type C, Type F, Type L",230V,it
+ST,Sao Tome and Principe,right,STD,"Type C, Type F",220V,pt
+SA,Saudi Arabia,right,SAR,"Type A, Type B, Type F, Type G","127V, 220V",ar
+SN,Senegal,right,XOF,"Type C, Type D, Type E, Type K",230V,fr
+CS,Serbia and Montenegro,right,RSD,"Type C, Type F",230V,sr
+SC,Seychelles,left,SCR,Type G,240V,"fr, en"
+SL,Sierra Leone,right,SLL,"Type D, Type G",230V,en
+SG,Singapore,left,SGD,"Type C, Type G, Type M",230V,"en, ms, ta, zh"
+SK,Slovakia,right,EUR,"Type C, Type E",230V,sk
+SI,Slovenia,right,EUR,"Type C, Type F",230V,sl
+SB,Solomon Islands,left,SBD,"Type I, Type G",220V,en
+SO,Somalia,right,SOS,Type C,220V,"so, ar"
+ZA,South Africa,left,ZAR,"Type C, Type D, Type M, Type N",230V,"af, en, nr, st, ss, tn, ts, ve, xh, zu"
+GS,South Georgia and the South Sandwich Islands,right,NONE,"Type C, Type F",220V,en
+ES,Spain,right,EUR,"Type C, Type F",230V,"es, eu, ca, gl, oc"
+LK,Sri Lanka,left,LKR,"Type D, Type M, Type G",230V,"si, ta"
+SD,Sudan,right,SDG,"Type C, Type D",230V,"ar, en"
+SR,Suriname,left,SRD,"Type C, Type F",127V,nl
+SJ,Svalbard and Jan Mayen,right,NOK,Unknown,Unknown,no
+SZ,Swaziland,left,SZL,Type M,230V,"en, ss"
+SE,Sweden,right,SEK,"Type C, Type F",230V,sv
+CH,Switzerland,right,CHF,"Type C, Type J",230V,"de, fr, it"
+SY,Syrian Arab Republic,right,SYP,"Type C, Type E, Type L",220V,ar
+TW,"Taiwan, Province of China",right,TWD,"Type A, Type B",110V,zh
+TJ,Tajikistan,right,TJS,"Type C, Type F, Type I",220V,"tg, ru"
+TZ,"Tanzania, United Republic of",right,TZS,"Type D, Type G",230V,"sw, en"
+TH,Thailand,left,THB,"Type A, Type B, Type C, Type F",220V,th
+TL,Timor-Leste,left,USD,"Type C, Type E, Type F, Type I",220V,pt
+TG,Togo,right,XOF,Type C,220V,fr
+TK,Tokelau,left,NZD,Type I,230V,en
+TO,Tonga,right,TOP,Type I,240V,"en, to"
+TT,Trinidad and Tobago,left,TTD,"Type A, Type B",115V,en
+TN,Tunisia,right,TND,"Type C, Type E",230V,ar
+TR,Turkey,right,TRY,"Type C, Type F",230V,tr
+TM,Turkmenistan,right,TMT,"Type B, Type C, Type F",220V,"tk, ru"
+TC,Turks and Caicos Islands,left,USD,"Type A, Type B",120V,en
+TV,Tuvalu,left,AUD,Type I,220V,en
+UG,Uganda,left,UGX,Type G,240V,"en, sw"
+UA,Ukraine,right,UAH,"Type C, Type F",220V,uk
+AE,United Arab Emirates,right,AED,"Type C, Type D, Type G",220V,ar
+GB,United Kingdom,left,GBP,Type G,230V,en
+US,United States,right,USD,"Type A, Type B",120V,en
+UM,United States Minor Outlying Islands,right,USD,"Type A, Type B",120V,en
+UY,Uruguay,right,UYI,"Type C, Type F, Type I, Type L",230V,es
+UZ,Uzbekistan,right,UZS,"Type C, Type I",220V,"uz, ru"
+VU,Vanuatu,right,VUV,"Type C, Type G, Type I",220V,"bi, en, fr"
+VE,Venezuela,right,VEF,"Type A, Type B",120V,es
+VN,Vietnam,right,VND,"Type A, Type C, Type F",220V,vi
+VG,"Virgin Islands, British",left,USD,"Type A, Type B",110V,en
+VI,"Virgin Islands, U.S.",left,USD,"Type A, Type B",110V,en
+WF,Wallis and Futuna,right,XPF,Type C,220V,fr
+EH,Western Sahara,right,MAD,"Type C, Type E","127V, 220V",es
+YE,Yemen,right,YER,"Type A, Type D, Type G",230V,ar
+ZM,Zambia,left,ZMK,"Type C, Type D, Type G",230V,en
+ZW,Zimbabwe,left,ZWL,"Type D, Type G",220V,"en, sn, nd"
