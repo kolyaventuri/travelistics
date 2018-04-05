@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :update]
 
-  resources :trips
+  resources :trips, except: [:new, :edit, :update]
 
   get '/register', to: 'users#new', as: 'registration'
   get '/login', to: 'sessions#login', as: 'login'
