@@ -25,7 +25,7 @@ describe 'User visits page for travel to two countries' do
   end
 
   scenario 'sees the data for those two countries' do
-    visit travel_path(@country, @country2)
+    visit travel_path(@country.code, @country2.code)
 
     expect(page).to have_content("Traveling from #{@country.name} to #{@country2.name}")
 
@@ -35,7 +35,7 @@ describe 'User visits page for travel to two countries' do
   end
 
   scenario 'sees the data for a country with similar information' do
-    visit travel_path(@country, @country3)
+    visit travel_path(@country.code, @country3.code)
 
     expect(page).to have_content("Traveling from #{@country.name} to #{@country3.name}")
 
