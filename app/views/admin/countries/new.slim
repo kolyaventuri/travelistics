@@ -14,3 +14,7 @@ h1 Add Country
   = f.collection_select :currency, @currencies, :id, :code
 
   = f.submit
+
+javascript:
+  var elem = document.querySelector('select');
+  var instance = M.FormSelect.init(elem);

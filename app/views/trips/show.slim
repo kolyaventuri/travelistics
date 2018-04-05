@@ -1,2 +1,12 @@
-h1= @trip.name
-h2 #{@trip.origin_country.name} to #{@trip.destination_country.name}
+h3= @trip.name
+h5 #{@trip.origin_country.name} to #{@trip.destination_country.name}
+
+ul.collection
+  li.collection-item
+    h5
+      | #{@trip.destination_country.name}&nbsp;
+      - if @trip.origin_country.currency.code == @trip.destination_country.currency.code
+        | also&nbsp;
+      | uses the #{@trip.destination_country.currency.code}
+  li.collection-item
+    h5 #{@trip.destination_country.name} speaks #{@language_string}

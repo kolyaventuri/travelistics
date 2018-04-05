@@ -10,6 +10,10 @@ class TripsController < ApplicationController
     @trip = Trip.where(id: params[:id], user: current_user).first
 
     return redirect_to trips_path unless @trip
+
+    @language_string = @trip.destination_country.languages.map do |lang|
+      lang.name
+    end.to_sentence
   end
 
   def create

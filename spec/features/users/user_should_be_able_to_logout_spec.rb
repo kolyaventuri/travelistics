@@ -22,7 +22,9 @@ describe 'Authenticated user visiting /logout' do
       fill_in 'user[email]', with: user[:email]
       fill_in 'user[password]', with: user[:password]
 
-      click_on 'Login'
+      within('.container') do
+        click_on 'Login'
+      end
 
       visit logout_path
 

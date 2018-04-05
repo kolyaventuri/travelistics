@@ -5,3 +5,8 @@ h1 Add language to #{@country.name}
   = f.collection_select :name, @languages, :id, :name
 
   = f.submit 'Add Language'
+
+
+javascript:
+  var elem = document.querySelector('select');
+  var instance = M.FormSelect.init(elem);

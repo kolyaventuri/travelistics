@@ -34,7 +34,7 @@ describe 'User visits page for travel to two countries' do
 
       expect(page).to_not have_content("#{@country.name} to #{@country2.name}")
 
-      visit travel_path(@country.code, @country2.code)
+      visit "/travel/#{@country.code}/#{@country2.code}"
 
       click_on 'Save to My Trips'
 
@@ -46,7 +46,7 @@ describe 'User visits page for travel to two countries' do
 
   describe 'if not logged in' do
     scenario 'should not see the save to trips link' do
-      visit travel_path(@country.code, @country2.code)
+      visit "/travel/#{@country.code}/#{@country2.code}"
 
       expect(page).to_not have_content('Save to My Trips')
     end
