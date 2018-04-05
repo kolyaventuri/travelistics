@@ -55,7 +55,7 @@ describe 'User visits /trips' do
       end
     end
 
-    expect(current_path).to be(trips_path)
+    expect(current_path).to eq(trips_path)
 
     within('.trips') do
       expect(page).to_not have_content("#{@country.name} to #{@country2.name}")
