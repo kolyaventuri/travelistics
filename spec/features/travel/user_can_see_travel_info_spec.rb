@@ -15,6 +15,8 @@ describe 'User visits page for travel to two countries' do
 
     @country.languages.push(@language)
     @country2.languages.push(@language2)
+
+    @country3.languages.push(@language2)
     @country3.languages.push(@language)
   end
 
@@ -27,7 +29,7 @@ describe 'User visits page for travel to two countries' do
 
     expect(page).to have_content("Traveling from #{@country.name} to #{@country2.name}")
 
-    expect(page).to have_content("#{@country2.name} uses the #{@country2.currency.name}")
+    expect(page).to have_content("#{@country2.name} uses the #{@country2.currency.code}")
 
     expect(page).to have_content("#{@country2.name} speaks #{@country2.languages.first.name}")
   end
@@ -37,8 +39,8 @@ describe 'User visits page for travel to two countries' do
 
     expect(page).to have_content("Traveling from #{@country.name} to #{@country3.name}")
 
-    expect(page).to have_content("#{@country3.name} also uses the #{@country2.currency.name}")
+    expect(page).to have_content("#{@country3.name} also uses the #{@country3.currency.code}")
 
-    expect(page).to have_content("#{@country3.name} also speaks #{@country3.languages.first.name}")
+    expect(page).to have_content("#{@country3.name} speaks #{@country3.languages.first.name} and #{@country3.languages.last.name}")
   end
 end
