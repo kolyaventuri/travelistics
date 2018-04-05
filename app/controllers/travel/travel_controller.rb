@@ -2,6 +2,21 @@
 module Travel
   # Travel Controller
   class TravelController < ApplicationController
+    def new
+      country1 = Country.where(
+                    Country.arel_table[:name]
+                      .lower
+                      .matches("%#{params[:origin].downcase}%")
+                  ).first
+      country2 = Country.where(
+                    Country.arel_table[:name]
+                      .lower
+                      .matches("%#{params[:destination].downcase}%")
+                  ).first
+
+      redirect_to "/travel/#{country1.code}/#{country2.code}"
+    end
+
     def show
       @country1 = Country.find_by(code: params[:country_1])
       @country2 = Country.find_by(code: params[:country_2])

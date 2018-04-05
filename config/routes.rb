@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :countries, only: [:show]
+
+  post '/travel', to: 'travel/travel#new'
+
   namespace :travel do
     get '/:country_1/:country_2', to: 'travel#show'
   end
