@@ -4,11 +4,25 @@ html
     title Travelistics
     = csrf_meta_tags
 
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css'
     = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js'
     = javascript_include_tag 'application'
 
   body
     - flash.each do |name, msg|
       = content_tag :div, msg, class: name
-      
+
+    nav.purple.lighten-2
+      .nav-wrapper
+        a.brand-logo(href=root_path) Travelistics
+        ul#nav-mobile.right.hide-on-med-and-down
+          -if current_user
+            li
+              a(href=trips_path) My Trips
+            li
+              a(href=logout_path) Logout
+          -else
+            li
+              a(href=login_path) Login
     == yield
