@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['POSTGRESQL_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   encoding: unicode
   pool: 5
